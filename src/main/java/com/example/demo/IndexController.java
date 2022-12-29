@@ -16,14 +16,13 @@ public class IndexController {
     }
 
     @GetMapping("index")
-    public List<Person> stringt(){
+    public Person stringt(){
 
-        for (int i = 0; i < 10; i++) {
-            Person person=new Person();
+           Person person=new Person();
             person.setNom(RandomString.make(8));
-            personRepository.save(person);
-        }
-        return personRepository.findAll();
+
+
+        return personRepository.save(person);
         //64434fe2-0e03-4e75-9cdd-2f0bb54e9a99
     }
 }
