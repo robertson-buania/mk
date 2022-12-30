@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
-import net.buania.mkprodback.dao.UtilisateurRepository;
-import net.buania.mkprodback.entities.Utilisateur;
+import com.example.demo.dao.UtilisateurRepository;
+import com.example.demo.entities.Utilisateur;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 

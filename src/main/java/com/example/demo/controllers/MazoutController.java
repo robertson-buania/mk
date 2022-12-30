@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
-import net.buania.mkprodback.entities.Mazout;
-import net.buania.mkprodback.services.MazoutServiceImpl;
+import com.example.demo.entities.Mazout;
+import com.example.demo.services.MazoutServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;

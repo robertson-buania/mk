@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
-import net.buania.mkprodback.dao.ConsommationmazoutRepository;
-import net.buania.mkprodback.entities.Consommationmazout;
+import com.example.demo.dao.ConsommationmazoutRepository;
+import com.example.demo.entities.Consommationmazout;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 

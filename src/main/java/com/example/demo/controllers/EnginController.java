@@ -1,10 +1,10 @@
 package com.example.demo.controllers;
 
-import net.buania.mkprodback.dao.ConsommationmazoutRepository;
-import net.buania.mkprodback.dto.Engindto;
-import net.buania.mkprodback.entities.Consommationmazout;
-import net.buania.mkprodback.entities.Engin;
-import net.buania.mkprodback.services.EnginServiceImpl;
+import com.example.demo.dao.ConsommationmazoutRepository;
+import com.example.demo.dto.Engindto;
+import com.example.demo.entities.Consommationmazout;
+import com.example.demo.entities.Engin;
+import com.example.demo.services.EnginServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;

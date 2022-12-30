@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
-import net.buania.mkprodback.dao.MazoutRepository;
-import net.buania.mkprodback.entities.Mazout;
+import com.example.demo.dao.MazoutRepository;
+import com.example.demo.entities.Mazout;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 

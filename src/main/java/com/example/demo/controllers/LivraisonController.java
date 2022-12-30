@@ -1,9 +1,9 @@
 package com.example.demo.controllers;
 
-import net.buania.mkprodback.dao.ProduitRepository;
-import net.buania.mkprodback.dto.Livraisondto;
-import net.buania.mkprodback.entities.Livraison;
-import net.buania.mkprodback.services.LivraisonServiceImpl;
+import com.example.demo.dao.ProduitRepository;
+import com.example.demo.dto.Livraisondto;
+import com.example.demo.entities.Livraison;
+import com.example.demo.services.LivraisonServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;

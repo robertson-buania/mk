@@ -1,9 +1,9 @@
 package com.example.demo.controllers;
-import net.buania.mkprodback.dao.EnginRepository;
-import net.buania.mkprodback.dto.Consommationdto;
-import net.buania.mkprodback.entities.Consommationmazout;
-import net.buania.mkprodback.entities.Engin;
-import net.buania.mkprodback.services.ConsommationmazoutServiceImpl;
+import com.example.demo.dao.EnginRepository;
+import com.example.demo.dto.Consommationdto;
+import com.example.demo.entities.Consommationmazout;
+import com.example.demo.entities.Engin;
+import com.example.demo.services.ConsommationmazoutServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -18,7 +18,7 @@ public class ConsommationmazoutController {
 
 
     private ConsommationmazoutServiceImpl consommationmazoutService;
-    private  EnginRepository enginRepository;
+    private EnginRepository enginRepository;
     public ConsommationmazoutController(EnginRepository enginRepository,ConsommationmazoutServiceImpl consommationmazoutService) {
         this.consommationmazoutService = consommationmazoutService;
         this. enginRepository=enginRepository;

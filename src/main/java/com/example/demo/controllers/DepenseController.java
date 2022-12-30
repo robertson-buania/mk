@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
-import net.buania.mkprodback.entities.Depense;
-import net.buania.mkprodback.services.DepenseServiceImpl;
+import com.example.demo.entities.Depense;
+import com.example.demo.services.DepenseServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;

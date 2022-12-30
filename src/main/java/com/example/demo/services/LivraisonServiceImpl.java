@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
-import net.buania.mkprodback.dao.LivraisonRepository;
-import net.buania.mkprodback.entities.Livraison;
+import com.example.demo.dao.LivraisonRepository;
+import com.example.demo.entities.Livraison;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
