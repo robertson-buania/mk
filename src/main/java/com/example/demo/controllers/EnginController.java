@@ -33,8 +33,11 @@ public class EnginController {
             engindto.setDescription(engin.getDescription());
             engindto.setNom(engin.getNom());
           Consommationmazout consommationmazout= consommationmazoutRepository.findDistinctFirstByEngin_Nom(engin.getNom());
-          engindto.setDerniereConsommation(consommationmazout.getNombrelitre());
-          engindto.setDerniereDate(consommationmazout.getDatecreation());
+          if(consommationmazout!=null){
+              engindto.setDerniereConsommation(consommationmazout.getNombrelitre());
+              engindto.setDerniereDate(consommationmazout.getDatecreation());
+          }
+
           engindtos.add(engindto);
 
         });
