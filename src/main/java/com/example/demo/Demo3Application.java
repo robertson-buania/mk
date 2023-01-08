@@ -34,6 +34,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 spring.servlet.multipart.max-file-size=500KB
 spring.servlet.multipart.max-request-size=500KB
 
+
 #mysql://${{ MYSQLUSER }}:${{ MYSQLPASSWORD }}@${{ MYSQLHOST }}:${{ MYSQLPORT }}/${{ MYSQLDATABASE }}
 
 

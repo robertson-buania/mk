@@ -27,8 +27,20 @@ public class ProduitController {
 
     @GetMapping("select")
     public Produit findOneProduit(@PathParam("id") int id){
-
+        //IllegalStateException
         return produitService.findOne((long) id);
+
+    }
+    @GetMapping("selectedname")
+    public ProduitdtoLiv findOneByNameProduit(@PathParam("nom") String nom){
+        //IllegalStateException
+
+        Produit produit=produitService.findOneByName(nom);
+        ProduitdtoLiv produitdtoLiv=new ProduitdtoLiv();
+        produitdtoLiv.setId(produit.getId());
+        produitdtoLiv.setNom(produit.getNom());
+        produitdtoLiv.setPrix(produit.getPrix());
+        return produitdtoLiv;
 
     }
     @PostMapping("save")
@@ -50,4 +62,37 @@ public class ProduitController {
         produitService.delete(id);
     }
    
+}
+
+class ProduitdtoLiv{
+    private Long id;
+    private String nom;
+    private Double prix;
+
+    public ProduitdtoLiv() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Double getPrix() {
+        return prix;
+    }
+
+    public void setPrix(Double prix) {
+        this.prix = prix;
+    }
 }

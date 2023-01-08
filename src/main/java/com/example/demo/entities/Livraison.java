@@ -54,7 +54,7 @@ public class Livraison implements Serializable {
         this.id = id;
     }
 
-    public String getNumclient() {
+    public String getNomclient() {
         return nomclient;
     }
 

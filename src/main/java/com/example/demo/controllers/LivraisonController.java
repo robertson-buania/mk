@@ -33,7 +33,7 @@ public class LivraisonController {
             livraison.setDestination(liv.getDestination());
             livraison.setDatecreation(liv.getDatecreation());
             livraison.setLieuvente(liv.getLieuvente());
-            livraison.setNomclient(liv.getDestination());
+            livraison.setNomclient(liv.getNomclient());
             livraison.setPlaque(liv.getPlaque());
             livraison.setPoidsbrute(liv.getPoidsbrute());
             livraison.setPoidsnet(liv.getPoidsnet());

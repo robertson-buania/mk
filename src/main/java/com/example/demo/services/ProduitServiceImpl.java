@@ -28,7 +28,9 @@ public class ProduitServiceImpl implements MkprodService<Produit>{
     public Produit findOne(Long id) {
         return produitRepository.findById(id).get();
     }
-
+    public Produit findOneByName(String nom) {
+        return produitRepository.findDistinctByNomContains(nom);
+    }
     @Override
     public Produit saveOne(Produit produit) {
         return produitRepository.save(produit);
