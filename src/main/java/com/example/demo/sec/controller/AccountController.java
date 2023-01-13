@@ -34,13 +34,13 @@ public class AccountController {
     }
 
     @GetMapping("users")
-    @PostAuthorize("hasAuthority('USER')")
+    @PostAuthorize("hasAuthority('SUPER_ADMIN')")
     List<AppUser> users(){
         return accountService.listUsers();
     }
 
     @PostMapping("users")
-    @PostAuthorize("hasAuthority('ADMIN')")
+    @PostAuthorize("hasAuthority('SUPER_ADMIN')")
     AppUser saveUser(@RequestBody AppUser appUser){
 
 
@@ -48,7 +48,7 @@ public class AccountController {
     }
 
     @PostMapping("roles/save")
-    @PostAuthorize("hasAuthority('ADMIN')")
+    @PostAuthorize("hasAuthority('SUPER_ADMIN')")
     AppRole saveUser(@RequestBody AppRole appRole){
 
 
@@ -57,6 +57,7 @@ public class AccountController {
 
 
     @PostMapping("addRoleToUser")
+    @PostAuthorize("hasAuthority('SUPER_ADMIN')")
     void addRoleToUser(@RequestBody AddRoleUserForm addRoleUserForm){
 
 
@@ -64,6 +65,7 @@ public class AccountController {
     }
 
     @GetMapping("refreshToken")
+    @PostAuthorize("hasAuthority('SUPER_ADMIN')")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String autToken=request.getHeader(JWTUtil.AUTH_HEADER);
 
@@ -102,6 +104,7 @@ public class AccountController {
     }
 
     @GetMapping("profil")
+    @PostAuthorize("hasAuthority('SUPER_ADMIN')")
     public AppUser profil(Principal principal){
         return accountService.loadUserByUsername(principal.getName());
     }

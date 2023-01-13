@@ -24,12 +24,16 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser appUser=accountService.loadUserByUsername(username);
-        Collection<GrantedAuthority> authorities=new ArrayList<>();
-        appUser.getAppRoles().forEach(appRole -> {
-            authorities.add(new SimpleGrantedAuthority(appRole.getRoleName()));
-        });
+       try {
+           AppUser appUser=accountService.loadUserByUsername(username);
+           Collection<GrantedAuthority> authorities=new ArrayList<>();
+           appUser.getAppRoles().forEach(appRole -> {
+               authorities.add(new SimpleGrantedAuthority(appRole.getRoleName()));
+           });
 
-        return new User(appUser.getUsername(), appUser.getPassword(), authorities);
+           return new User(appUser.getUsername(), appUser.getPassword(), authorities);
+       }catch (Exception e){
+           throw e;
+       }
     }
 }

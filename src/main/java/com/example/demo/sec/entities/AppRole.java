@@ -8,7 +8,7 @@ public class AppRole {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 7)
+    @Column(length = 15)
     private String roleName;
 
     public AppRole(Long id, String roleName) {

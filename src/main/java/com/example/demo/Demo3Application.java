@@ -48,28 +48,36 @@ public class Demo3Application {
             restConfiguration.exposeIdsFor(Depense.class, Consommationmazout.class,
                     Engin.class, Livraison.class,
                     Mazout.class, Produit.class );
-          /*  AppRole appRole=new AppRole(null,"ADMIN");
+            AppRole appRole=new AppRole(null,"ADMIN");
 
             accountService.addAppRole(appRole);
+            AppRole appRolesuper=new AppRole(null,"SUPER_ADMIN");
+
+            accountService.addAppRole(appRolesuper);
 
             AppRole appRole1=new AppRole(null,"USER");
 
             accountService.addAppRole(appRole1);
 
 
-            AppUser appUser=new AppUser(null,"admin","1234",new ArrayList<>());
+            AppUser appUser=new AppUser(null,"Michel Kalala","M.kalala@07*",new ArrayList<>());
             accountService.addAppUser(appUser);
-            AppUser appUser1=new AppUser(null,"user1","1234",new ArrayList<>());
+            AppUser appUser1=new AppUser(null,"MIKE 001","Mike@07*",new ArrayList<>());
             accountService.addAppUser(appUser1);
+            AppUser buania=new AppUser(null,"Buania","Buania@@7*",new ArrayList<>());
+            accountService.addAppUser(buania);
 
 
-            accountService.addRoleToUser("admin","ADMIN");
-            accountService.addRoleToUser("admin","USER");
-            accountService.addRoleToUser("user1","USER");
+            accountService.addRoleToUser("Michel Kalala","ADMIN");
+            accountService.addRoleToUser("Michel Kalala","USER");
+            accountService.addRoleToUser("Buania","ADMIN");
+            accountService.addRoleToUser("Buania","SUPER_ADMIN");
+            accountService.addRoleToUser("Buania","USER");
+            accountService.addRoleToUser("MIKE 001","USER");
 
 
 
-           */
+
 
 
         };
