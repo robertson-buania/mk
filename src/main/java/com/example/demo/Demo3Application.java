@@ -49,7 +49,7 @@ public class Demo3Application {
                     Engin.class, Livraison.class,
                     Mazout.class, Produit.class );
           /*  AppRole appRole=new AppRole(null,"ADMIN");
-
+b****777
             accountService.addAppRole(appRole);
             AppRole appRolesuper=new AppRole(null,"SUPER_ADMIN");
 
@@ -85,6 +85,14 @@ public class Demo3Application {
 
 
     }
+    /*
+    git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Buania/fundiboramkprod.git
+git push -u origin main
+     */
 
 /*
 Local
