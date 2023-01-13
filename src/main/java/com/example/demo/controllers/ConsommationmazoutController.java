@@ -3,7 +3,9 @@ import com.example.demo.dao.EnginRepository;
 import com.example.demo.dto.Consommationdto;
 import com.example.demo.entities.Consommationmazout;
 import com.example.demo.entities.Engin;
+import com.example.demo.sec.contantes.JWTUtil;
 import com.example.demo.services.ConsommationmazoutServiceImpl;
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -13,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/consommationmazout/")
-@CrossOrigin("*")
+@CrossOrigin(JWTUtil.CORS_ACCESS_PERMITED)
 public class ConsommationmazoutController {
 
 
@@ -25,6 +27,7 @@ public class ConsommationmazoutController {
     }
 
     @GetMapping("all")
+    @PostAuthorize("hasAuthority('USER')")
     public List<Consommationdto> findAllConsommationmazoutes(){
         List<Consommationdto> consommationdtos=new ArrayList<>();
         consommationmazoutService.all().forEach(consommationmazout -> {
@@ -42,12 +45,14 @@ public class ConsommationmazoutController {
     }
 
     @GetMapping("select")
+    @PostAuthorize("hasAuthority('USER')")
     public Consommationmazout findOneConsommationmazout(@PathParam("id") int id){
 
         return consommationmazoutService.findOne((long) id);
 
     }
     @PostMapping("save")
+    @PostAuthorize("hasAuthority('ADMIN')")
     public Consommationmazout onSaveConsommationmazout(@RequestBody Consommationdto consommationdto){
 
         Consommationmazout consommationmazout=new Consommationmazout();
@@ -65,6 +70,7 @@ public class ConsommationmazoutController {
         return consommationmazoutService.saveOne(consommationmazout);
     }
     @DeleteMapping("delete")
+    @PostAuthorize("hasAuthority('ADMIN')")
     public void onSaveConsommationmazout(@PathParam("id") Long id){
 
          consommationmazoutService.delete(id);

@@ -1,13 +1,27 @@
 package com.example.demo;
 
 import com.example.demo.entities.*;
+import com.example.demo.sec.contantes.JWTUtil;
+import com.example.demo.sec.entities.AppRole;
+import com.example.demo.sec.entities.AppUser;
+import com.example.demo.sec.service.AccountService;
+import com.example.demo.sec.service.AccountServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.util.ArrayList;
 
 @SpringBootApplication
+@EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true)
 public class Demo3Application {
 
     public static void main(String[] args) {
@@ -15,14 +29,55 @@ public class Demo3Application {
     }
 
     @Bean
-    CommandLineRunner start(RepositoryRestConfiguration restConfiguration){
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedOrigins(JWTUtil.CORS_ACCESS_PERMITED);
+            }
+        };
+    }
+    @Bean
+    PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    CommandLineRunner start(AccountService accountService, RepositoryRestConfiguration restConfiguration){
         return args -> {
             restConfiguration.exposeIdsFor(Depense.class, Consommationmazout.class,
                     Engin.class, Livraison.class,
                     Mazout.class, Produit.class );
+          /*  AppRole appRole=new AppRole(null,"ADMIN");
+
+            accountService.addAppRole(appRole);
+
+            AppRole appRole1=new AppRole(null,"USER");
+
+            accountService.addAppRole(appRole1);
+
+
+            AppUser appUser=new AppUser(null,"admin","1234",new ArrayList<>());
+            accountService.addAppUser(appUser);
+            AppUser appUser1=new AppUser(null,"user1","1234",new ArrayList<>());
+            accountService.addAppUser(appUser1);
+
+
+            accountService.addRoleToUser("admin","ADMIN");
+            accountService.addRoleToUser("admin","USER");
+            accountService.addRoleToUser("user1","USER");
+
+
+
+           */
+
+
         };
     }
-}
+
+
+    }
+
 /*
 Local
 

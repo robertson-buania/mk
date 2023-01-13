@@ -4,7 +4,9 @@ import com.example.demo.dao.ConsommationmazoutRepository;
 import com.example.demo.dto.Engindto;
 import com.example.demo.entities.Consommationmazout;
 import com.example.demo.entities.Engin;
+import com.example.demo.sec.contantes.JWTUtil;
 import com.example.demo.services.EnginServiceImpl;
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -13,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/engin/")
-@CrossOrigin("*")
+@CrossOrigin(JWTUtil.CORS_ACCESS_PERMITED)
 public class EnginController {
 
 
@@ -26,6 +28,7 @@ public class EnginController {
     }
 
     @GetMapping("all")
+    @PostAuthorize("hasAuthority('USER')")
     public List<Engindto> findAllEngins(){
         List<Engindto> engindtos=new ArrayList<>();
         enginServicee.all().forEach(engin -> {
@@ -46,12 +49,14 @@ public class EnginController {
     }
 
     @GetMapping("select")
+    @PostAuthorize("hasAuthority('USER')")
     public Engin findOneEngin(@PathParam("id") int id){
 
         return enginServicee.findOne((long) id);
 
     }
     @PostMapping("save")
+    @PostAuthorize("hasAuthority('ADMIN')")
     public Engin onSaveProduit(@RequestBody Engin engin){
 
         return enginServicee.saveOne(engin);
