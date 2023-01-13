@@ -48,7 +48,7 @@ public class Demo3Application {
             restConfiguration.exposeIdsFor(Depense.class, Consommationmazout.class,
                     Engin.class, Livraison.class,
                     Mazout.class, Produit.class );
-            AppRole appRole=new AppRole(null,"ADMIN");
+          /*  AppRole appRole=new AppRole(null,"ADMIN");
 
             accountService.addAppRole(appRole);
             AppRole appRolesuper=new AppRole(null,"SUPER_ADMIN");
@@ -73,7 +73,7 @@ public class Demo3Application {
             accountService.addRoleToUser("Buania","ADMIN");
             accountService.addRoleToUser("Buania","SUPER_ADMIN");
             accountService.addRoleToUser("Buania","USER");
-            accountService.addRoleToUser("MIKE 001","USER");
+            accountService.addRoleToUser("MIKE 001","USER");*/
 
 
 
