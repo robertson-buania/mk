@@ -48,32 +48,9 @@ public class Demo3Application {
             restConfiguration.exposeIdsFor(Depense.class, Consommationmazout.class,
                     Engin.class, Livraison.class,
                     Mazout.class, Produit.class );
-            AppRole appRole=new AppRole(null,"ADMIN");
-//b****777
-            accountService.addAppRole(appRole);
-            AppRole appRolesuper=new AppRole(null,"SUPER_ADMIN");
+         /*
 
-            accountService.addAppRole(appRolesuper);
-
-            AppRole appRole1=new AppRole(null,"USER");
-
-            accountService.addAppRole(appRole1);
-
-
-            AppUser appUser=new AppUser(null,"Michel","Kalala1993fundibora",new ArrayList<>());
-            accountService.addAppUser(appUser);
-            AppUser appUser1=new AppUser(null,"Mike001","Mkproduction",new ArrayList<>());
-            accountService.addAppUser(appUser1);
-            AppUser buania=new AppUser(null,"Buania","Buania@@",new ArrayList<>());
-            accountService.addAppUser(buania);
-
-
-            accountService.addRoleToUser("Michel","ADMIN");
-            accountService.addRoleToUser("Michel","USER");
-            accountService.addRoleToUser("Buania","ADMIN");
-            accountService.addRoleToUser("Buania","SUPER_ADMIN");
-            accountService.addRoleToUser("Buania","USER");
-            accountService.addRoleToUser("Mike001","USER");
+          */
 
 
 
